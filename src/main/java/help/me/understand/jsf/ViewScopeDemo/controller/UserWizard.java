@@ -2,14 +2,14 @@ package help.me.understand.jsf.ViewScopeDemo.controller;
 
 import help.me.understand.jsf.ViewScopeDemo.model.User;
 import org.primefaces.event.FlowEvent;
-import org.springframework.stereotype.Component;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import java.io.Serializable;
 
-@Component
+@ManagedBean
 @ViewScoped
 public class UserWizard implements Serializable {
     private User user = new User();
