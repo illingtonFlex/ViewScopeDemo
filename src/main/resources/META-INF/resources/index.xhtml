@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>Really simple CRUD</title>
+</h:head>
+<h:body>
+    <h3>List items</h3>
+    <h:form rendered="#{not empty viewScopedController.list}">
+        <h:dataTable value="#{viewScopedController.list}" var="item">
+            <h:column><f:facet name="header">ID</f:facet>#{item.id}</h:column>
+            <h:column><f:facet name="header">Value</f:facet>#{item.value}</h:column>
+            <h:column><h:commandButton value="edit" action="#{viewScopedController.doEdit(item)}" /></h:column>
+            <h:column><h:commandButton value="delete" action="#{viewScopedController.delete(item)}" /></h:column>
+        </h:dataTable>
+    </h:form>
+    <h:panelGroup rendered="#{empty viewScopedController.list}">
+        <p>Table is empty! Please add new items.</p>
+    </h:panelGroup>
+    <h:panelGroup rendered="#{!viewScopedController.edit}">
+        <h3>Add item</h3>
+        <h:form>
+            <p>Value: <h:inputText value="#{viewScopedController.item.value}" /></p>
+            <p><h:commandButton value="add" action="#{viewScopedController.add}" /></p>
+        </h:form>
+    </h:panelGroup>
+    <h:panelGroup rendered="#{viewScopedController.edit}">
+        <h3>Edit item #{viewScopedController.item.id}</h3>
+        <h:form>
+            <p>Value: <h:inputText value="#{viewScopedController.item.value}" /></p>
+            <p><h:commandButton value="save" action="#{viewScopedController.save}" /></p>
+        </h:form>
+    </h:panelGroup>
+</h:body>
+</html>
