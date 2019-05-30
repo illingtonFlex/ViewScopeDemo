@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>Q-Check - Unexpected Exception</title>
+        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+    </h:head>
+
+    <h:body styleClass="exception-body error-page">
+	
+        <div class="exception-type"></div>
+      
+        <div class="card exception-panel">
+        	
+             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <h1>Yikes, that's a problem!</h1>
+            <div class="exception-detail">
+            	<p style="text-align: center"><b>Error Number: <h:outputText value="#{errorId}"/></b></p>
+            	<p>Please take note of the page you were on and the error number listed above and then give us a call at <b>(615) 435-3287</b> to let us know about this problem.</p>
+            	<p>Our office hours are 8am - 5pm (Central time) but you can contact us anytime via our QuikQ Support line at <b>1 (800) 659-2261</b>.</p>
+            </div>
+            <p:button href="/dashboard.xhtml" value="Take me Home!" styleClass="secondary"/>
+        </div>
+        
+        <div class="copyright">
+           	<h:outputText value="V#{version}"/>
+        	&#169; 2009 - 
+        	<h:outputText value="#{currentDate}">
+        		<f:convertDateTime pattern="yyyy" />
+        	</h:outputText> 
+        	QuikQ, LLC - All Rights Reserved.
+        </div>
+        
+        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
+        <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="ultima-layout" />
+        <h:outputStylesheet name="error.css" library="css" />
+    </h:body>
+
+</html>

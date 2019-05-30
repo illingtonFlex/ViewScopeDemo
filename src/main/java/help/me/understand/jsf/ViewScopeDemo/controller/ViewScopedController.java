@@ -71,5 +71,9 @@ public class ViewScopedController implements Serializable {
         return edit;
     }
 
+    public void doException() throws Exception {
+        throw new Exception("Something bad happened!");
+    }
+
     // Other getters/setters are actually unnecessary. Feel free to add them though.
 }
