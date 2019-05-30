@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://java.sun.com/jsf/core">
 
     <h:head>
         <f:facet name="first">
@@ -11,8 +10,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
             <meta name="apple-mobile-web-app-capable" content="yes" />
         </f:facet>
-        <title>Q-Check - File not Found</title>
-        <h:outputScript name="js/ripple.js" library="ultima-layout" />
+        <title>File not Found</title>
     </h:head>
 
     <h:body styleClass="exception-body notfound-page">
@@ -23,25 +21,9 @@
             <i class="fa fa-times-circle" aria-hidden="true"></i>
             <h1>Well, this is awkward!</h1>
             <div class="exception-detail">
-            	<p>Looks like we were unable to find the page you were looking for. Please use the button below to return to the main menu.</p>
-            	<p>If this continues to be a problem, feel free to contact us at <b>(615) 435-3287</b> to let us know.</p>
-            	<p>Our office hours are 8am - 5pm (Central time) but you can contact us anytime via our QuikQ Support line at <b>1 (800) 659-2261</b>.</p>
+            	<p>Looks like we were unable to find the page you were looking for.</p>
             </div>
-            <p:button href="/qcheck/dashboard.xhtml" value="Take me Home!" styleClass="secondary"/>
         </div>
-        
-        <div class="copyright">
-           	<h:outputText value="V#{version}"></h:outputText>
-        	&#169; 2009 - 
-        	<h:outputText value="#{currentDate}">
-        		<f:convertDateTime pattern="yyyy" />
-        	</h:outputText> 
-        	QuikQ, LLC - All Rights Reserved.
-        </div>
-        
-        <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
-        <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="ultima-layout" />
-        <h:outputStylesheet name="error.css" library="css" />
     </h:body>
 
 </html>
