@@ -22,7 +22,6 @@ public class ViewScopeDemoApplication {
 
 	@Bean
 	public HazelcastInstance hazelcastInstance(ApplicationContext context) {
-
 		String groupName = "ViewScopeDemo_IMDG";
 
 		//Create basic configuration with no enabled join methods (standalone mode).
